@@ -38,7 +38,27 @@
                     cities_dataPath: "./assets/map3d/data/cities.json",
                     shops_dataPath: "./assets/map3d/data/shops.json",
                     events_dataPath: "./assets/map3d/data/events.json",
-                    settings_dataPath: "./assets/map3d/data/settings.json"
+                    settings_dataPath: "./assets/map3d/data/settings.json",
+                    onInit: () => {
+                        console.log("================================");
+                        console.log("onInit!");
+                        console.log("================================");
+                    },
+                    onZoomChange: (newZoomLevel) => {
+                        console.log("================================");
+                        console.log("ZOOM CHANGE: "+newZoomLevel);
+                        console.log("================================");
+                    },
+                    onTierChange: (newTierLevel) => {
+                        console.log("================================");
+                        console.log("TIER CHANGE: "+newTierLevel);
+                        console.log("================================");
+                    },
+                    onMarkerClicked: (type, id) => {
+                        console.log("================================");
+                        console.log("MARKER CLICKED: "+type+" - "+id);
+                        console.log("================================");
+                    }
                 });
                 // EVENTOS:
                 window.platform.webglApp.emitter.on("onCityClicked", (data) => {
